@@ -1,0 +1,10 @@
+<div class="card text-center bg-light mb-2 mr-2">
+  <app-vehicle-card [vehicle]="vehicle"></app-vehicle-card>
+
+  <div class="btn-group" role="group" aria-label="actions">
+    <button type="button" class="btn btn-outline-success">Details</button>
+    <button (click)="delFav(vehicle.id)" type="button" class="btn btn-danger">Remove</button>
+  </div>
+
+
+</div>

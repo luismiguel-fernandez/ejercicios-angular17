@@ -1,0 +1,80 @@
+<table class="table table-striped">
+  <thead class="thead-light">
+    <tr><th>MODEL NAMES</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>
+      <div class="form-group">
+        <input #model (keyup)="setNameFilter(model.value)" type="text" class="form-control" id="model" placeholder="Model's name">
+      </div>
+    </td></tr>
+  </tbody>
+</table>
+
+<table class="table table-striped">
+  <thead class="thead-light">
+    <tr><th>PRICES</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>
+      <div class="form-group">
+        <input #min (keyup)="setMinPriceFilter(min.value)" type="text" class="form-control" id="min" placeholder="Minimum price">
+        <input #max (keyup)="setMaxPriceFilter(max.value)" type="text" class="form-control" id="max" placeholder="Maximum price">
+      </div>
+    </td></tr>
+  </tbody>
+</table>
+
+<table id="fabFilters" class="table table-striped">
+  <thead class="thead-light">
+    <tr><th>MANUFACTURERS</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>
+      <div class="form-group">
+        <label for="fabList">Choose a manufacturer</label>
+        <select #manuf class="form-control" id="manufList" (change)="setManufacturerFilter(manuf.value)">
+          <option value="0">(Elige un fabricante)</option>
+          @for ( m of getManufacturers(); track m.id) {
+            <option value="{{m.id}}">{{m.name}}</option>
+          }
+        </select>
+      </div>
+      <div class="form-check">
+        <input class="form-check-input" type="checkbox" value="" id="fab1" checked>
+        <label class="form-check-label" for="fab1">Fabricante1</label>
+      </div>
+      <div class="form-check">
+        <input class="form-check-input" type="checkbox" value="" id="fab2" checked>
+        <label class="form-check-label" for="fab2">Fabricante2</label>
+      </div>
+    </td></tr>
+  </tbody>
+</table>
+<table id="tecFilters" class="table table-striped">
+  <thead class="thead-light">
+    <tr><th>TECHNOLOGIES</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>
+      <div class="form-group">
+        <label for="techList">Choose a technologie</label>
+        <select #tec class="form-control" id="techList" (change)="setTechFilter(tec.value)">
+          <option value="0">(Elige una tecnología)</option>
+          @for ( t of getTechnologies(); track t.id) {
+            <option value="{{t.id}}">{{t.name}}</option>
+          }
+        </select>
+      </div>
+      <div class="form-check">
+        <input class="form-check-input" type="checkbox" value="" id="tec1" checked>
+        <label class="form-check-label" for="tec1">Tecnología1</label>
+      </div>
+      <div class="form-check">
+        <input class="form-check-input" type="checkbox" value="" id="tec2" checked>
+        <label class="form-check-label" for="tec2">Tecnología2</label>
+      </div>
+    </td></tr>
+  </tbody>
+</table>
+<button class="btn btn-primary" id="resetFilters">Clear filters</button>

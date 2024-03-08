@@ -1,1 +1,9 @@
-<p>your-garage-section works!</p>
+<div id="listaV" class="row row-cols-5">
+  @for ( v of getFavs(); track $index) {
+    @if (getCarById(v)) {
+      <app-garage-section-vehicle-card [vehicle]="getCarById(v)"></app-garage-section-vehicle-card>
+    } @else {
+      <span>loading...</span>
+    }
+  }
+</div>

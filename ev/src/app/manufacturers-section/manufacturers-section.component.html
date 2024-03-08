@@ -1,1 +1,11 @@
-<p>manufacturers-section works!</p>
+<div class="row">
+  <div class="input-group mb-3">
+    <input type="text" [(ngModel)]="pattern" class="form-control" placeholder="Manufacturer's name" aria-label="Manufacturer's name" aria-describedby="searchBtn">
+    <button class="btn btn-success" type="button" id="searchBtn">Search manufacturer</button>
+  </div>
+</div>
+<div class="row row-cols-5">
+  @for ( m of getManufacturers() | byName:pattern ; track $index) {
+    <app-manufacturer-card [manufacturer]="m"></app-manufacturer-card>
+  }
+</div>
