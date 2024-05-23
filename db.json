@@ -1,0 +1,16 @@
+{
+  "individuos": [
+    { "id": 1, "name": "Hulk Hogan" },
+    { "id": 2, "name": "Barack Obama" },
+    { "id": 3, "name": "Bin Laden" },
+    { "id": 4, "name": "Hugo Chavez" },
+    { "id": 5, "name": "Rey Emérito" }
+  ],
+  "equipos": [
+    { "id": 1, "name": "Dream Team" },
+    { "id": 2, "name": "DAW2 Presencial" },
+    { "id": 3, "name": "DAW2 Distancia" },
+    { "id": 4, "name": "Profesores DAWD" },
+    { "id": 5, "name": "New Team" }
+  ]
+}
